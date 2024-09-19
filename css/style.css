@@ -1,0 +1,128 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Título principal */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #4A90E2;
+}
+
+/* Estilo de los formularios */
+form {
+    margin-bottom: 30px;
+}
+
+label {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    margin-top: 10px;
+    transition: border-color 0.3s ease;
+}
+
+textarea:focus {
+    border-color: #4A90E2;
+    outline: none;
+}
+
+/* Botón moderno */
+input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #4A90E2;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #357ABD;
+}
+
+/* Lista de ideas */
+#lista-ideas {
+    margin-top: 20px;
+    list-style: none;
+}
+
+#lista-ideas li {
+    background-color: #f4f7f6;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 1.1rem;
+}
+
+/* Estilos adicionales para pantallas pequeñas */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    textarea {
+        font-size: 0.9rem;
+    }
+
+    input[type="submit"] {
+        font-size: 1rem;
+    }
+
+    #lista-ideas li {
+        font-size: 1rem;
+    }
+}
+
+
+/* Estilo del mensaje de error */
+.error {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.5s ease;
+    opacity: 0;
+}
+
+.error.show {
+    opacity: 1;
+}
