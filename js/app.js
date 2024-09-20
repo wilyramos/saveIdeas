@@ -38,7 +38,7 @@ function agregarIdea(e) {
         id: Date.now(),
         texto: idea
     }
-    
+
     // add the idea to the array
     ideas = [...ideas, ideaObj];
 
@@ -96,11 +96,11 @@ function clearHTML() {
 }
 
 function deleteIdea(id) {
-
     ideas = ideas.filter(idea => idea.id !== id);
     createHTML();
 }
 
+// sincronize local storage
 function syncStorage() {
     localStorage.setItem('ideas', JSON.stringify(ideas));
 }
