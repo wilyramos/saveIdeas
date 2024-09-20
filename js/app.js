@@ -1,28 +1,24 @@
-// var
-
+// 
 const listaIdeas = document.querySelector('#lista-ideas');
 const form = document.querySelector('#formulario');
 let ideas = [];
 
-
 // event listeners
 
-eveentListeners();
+eventListeners();
 
-function eveentListeners() {
+function eventListeners() {
 
     // when the form is submitted
     form.addEventListener('submit', agregarIdea);
 
     // when the document is loaded
-
     document.addEventListener('DOMContentLoaded', () => {
         ideas = JSON.parse(localStorage.getItem('ideas')) || [];
         createHTML();
     });
-
+    
     // delete idea
-
     listaIdeas.addEventListener('click', deleteIdea);
 }
 
@@ -30,35 +26,30 @@ function eveentListeners() {
 
 function agregarIdea(e) {
     e.preventDefault();
-
     const idea = document.querySelector('#idea').value;
-    // console.log(idea);
-    
-    if(idea === '') {
+
+    if (idea === '') {
         showError('Agrega una idea');
         return;
     }
 
     // create a object with the idea
-
     const ideaObj = {
         id: Date.now(),
         texto: idea
     }
+    
     // add the idea to the array
     ideas = [...ideas, ideaObj];
-
-    console.log(ideas);
 
     // rendering the ideas
     createHTML();
 
     // restart the form
-
     form.reset();
 }
 
-function showError (error) {
+function showError(error) {
     const messageError = document.createElement('p');
     messageError.textContent = error;
     messageError.classList.add('error');
@@ -77,7 +68,7 @@ function createHTML() {
 
     clearHTML();
 
-    if(ideas.length > 0) {
+    if (ideas.length > 0) {
         ideas.forEach(idea => {
             const btnEliminar = document.createElement('a');
             btnEliminar.classList.add('borrar-idea');
@@ -99,13 +90,12 @@ function createHTML() {
 }
 
 function clearHTML() {
-    while(listaIdeas.firstChild) {
+    while (listaIdeas.firstChild) {
         listaIdeas.removeChild(listaIdeas.firstChild);
     }
 }
 
 function deleteIdea(id) {
-    
 
     ideas = ideas.filter(idea => idea.id !== id);
     createHTML();
